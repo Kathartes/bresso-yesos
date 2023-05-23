@@ -1,0 +1,14 @@
+{
+  "name": "preentrega3",
+  "version": "1.0.0",
+  "description": "preentrega",
+  "main": "index.js",
+  "scripts": {
+    "build-sass":"sass ./sass/main.scss ./css/main.css -w --no-source-map"
+  },
+  "author": "Andres Romero",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

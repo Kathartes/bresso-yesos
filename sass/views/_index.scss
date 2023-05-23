@@ -1,0 +1,39 @@
+.articulos {
+  @extend .alineado;
+  background-color: $blanco;
+
+  &__tarjeta {
+    @extend .alineado;
+
+    &-contenedor {
+     margin: 2rem;
+    }
+
+    &-imagen {
+     width: 100%;
+    }
+    &:last-of-type {
+      background-color: $gris;
+      margin-bottom: 3rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .articulos__tarjeta {
+    flex-direction: row;
+    padding: 3rem 7rem;
+    justify-content: center;
+  
+    &-contenedor {
+      width: 38%;
+      text-align: left;
+      justify-content: center;
+    }
+    &-imagen {
+      width: min(600px, 50%);
+    }
+    &:last-of-type {
+      flex-direction: row-reverse;
+    }
+  }
+}

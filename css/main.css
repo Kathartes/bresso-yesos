@@ -1,0 +1,375 @@
+@font-face {
+  font-family: norwester;
+  src: url(../assets/ttf/norwester.ttf);
+}
+@font-face {
+  font-family: teko;
+  src: url(../assets/ttf/Teko-Regular.ttf);
+}
+.alineado, .galeria figure, .nosotros, .articulos__tarjeta, .articulos, .servicios__tarjeta, .oscurecer, .hero, .presupuesto, .obra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero, .presupuesto, .obra {
+  margin-top: 80px;
+  animation: paneo 100s infinite linear;
+  height: 480px;
+  width: 100%;
+}
+
+@keyframes paneo {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+@keyframes entrada {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translatey(0);
+  }
+}
+.tarjeta-1 {
+  animation: entrada 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tarjeta-2 {
+  animation: entrada 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tarjeta-3 {
+  animation: entrada 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tarjeta-4 {
+  animation: entrada 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: teko;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+h1 {
+  color: white;
+  text-shadow: -4px 3px 2px rgba(0, 0, 0, 0.7);
+  font-size: 2.5rem;
+  font-family: norwester;
+  margin: 0 1rem;
+}
+
+h2 {
+  color: lightgray;
+  text-shadow: -4px 3px 2px rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 650px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.7rem;
+  }
+}
+.color-fondo {
+  background-color: #3A3A3C;
+  box-shadow: 0px 8px 20px 2px rgba(0, 0, 0, 0.6);
+}
+
+.presentacion {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.presentacion__video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: -1;
+  filter: brightness(70%);
+}
+.presentacion__contenedor {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+@media (min-width: 650px) {
+  .presentacion__contenedor {
+    top: 45%;
+    left: 10%;
+    font-size: 5rem;
+  }
+}
+.fondo {
+  background-image: url("../assets/images/plano-blanco.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.oscurecer {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 3rem auto 0 auto;
+  gap: 20px;
+  width: 70%;
+}
+.servicios__tarjeta {
+  background-color: #3A3A3C;
+  color: white;
+  padding: 10px;
+  border-radius: 0.7rem;
+  height: 200px;
+  text-align: center;
+}
+.servicios__tarjeta strong {
+  color: #B87333;
+}
+.servicios__tarjeta svg {
+  margin: 1rem;
+}
+
+@media (min-width: 670px) {
+  .servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1350px) {
+  .servicios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.boton {
+  background: #B87333;
+  padding: 10px 2rem;
+  outline: 2.5px solid #B87333;
+  border: 0;
+  border-radius: 0.5rem;
+  transition: 0.4s;
+  margin-top: 1rem;
+}
+.boton:hover {
+  outline-offset: 4.5px;
+}
+.boton a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo__imagen {
+  height: 60px;
+}
+
+.articulos {
+  background-color: white;
+}
+.articulos__tarjeta-contenedor {
+  margin: 2rem;
+}
+.articulos__tarjeta-imagen {
+  width: 100%;
+}
+.articulos__tarjeta:last-of-type {
+  background-color: lightgray;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1200px) {
+  .articulos__tarjeta {
+    flex-direction: row;
+    padding: 3rem 7rem;
+    justify-content: center;
+  }
+  .articulos__tarjeta-contenedor {
+    width: 38%;
+    text-align: left;
+    justify-content: center;
+  }
+  .articulos__tarjeta-imagen {
+    width: min(600px, 50%);
+  }
+  .articulos__tarjeta:last-of-type {
+    flex-direction: row-reverse;
+  }
+}
+.nosotros {
+  width: min(992px, 100%);
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.obra {
+  background-image: url("../assets/images/hero-obras.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 3rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-top: 120px;
+  padding-bottom: 2rem;
+}
+.galeria figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4rem 6rem 3rem 1rem;
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: 0.5rem;
+  z-index: 1;
+  opacity: 0;
+}
+.galeria figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.galeria figure:nth-child(2), .galeria figure:nth-child(4), .galeria figure:nth-child(7) {
+  grid-row: span 2;
+}
+.galeria figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.galeria figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.3);
+}
+.galeria figure:hover img {
+  transform: scale(1.05);
+}
+.galeria figure:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.presupuesto {
+  background-image: url("../assets/images/hero-presupuesto.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formulario {
+  background-color: #434346;
+  width: min(50rem, 100%);
+  margin: 120px auto;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  opacity: 0.9;
+  box-shadow: 0px 0px 53px 5px rgba(0, 0, 0, 0.1);
+}
+.formulario fieldset {
+  border: none;
+}
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.formulario__campos {
+  margin-bottom: 1rem;
+}
+.formulario__campos-campo label {
+  color: white;
+  margin-bottom: 0.5;
+  display: block;
+}
+.formulario__campos .input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.formulario__campos textarea {
+  height: 10rem;
+}
+.formulario__boton {
+  background-color: #B87333;
+  padding: 1rem 3rem;
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+  border: none;
+  width: 100%;
+  float: right;
+  cursor: pointer;
+}
+
+/*Mediaquerys */
+@media (min-width: 480px) {
+  .formulario__boton {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .formulario__campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 10rem;
+    column-gap: 1rem;
+  }
+  .formulario__campos-campo:nth-child(3), .formulario__campos-campo:nth-child(4) {
+    grid-column: 1/3;
+  }
+}
