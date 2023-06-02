@@ -4,11 +4,10 @@
 
   &__tarjeta {
     @extend .alineado;
-
+    
     &-contenedor {
      margin: 2rem;
     }
-
     &-imagen {
      width: 100%;
     }
